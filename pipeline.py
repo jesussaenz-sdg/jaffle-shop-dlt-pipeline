@@ -67,7 +67,7 @@ def jaffle_shop_source() -> Any:
     Groups all Jaffle Shop resources into a single source for parallel execution.
     """
     for endpoint in ENDPOINTS:
-        yield fetch_jaffle_data(endpoint)
+        yield fetch_jaffle_data(endpoint).with_name(endpoint)
 
 if __name__ == "__main__":
     logger.info("Initializing highly optimized Jaffle Shop pipeline...")
